@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RECGConstant } from 'src/app/models/rec.constant.model';
 
 @Component({
   selector: 'lap-landing-component',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing-component.component.scss']
 })
 export class LandingComponentComponent {
-
+  readonly RECGConstant = RECGConstant;
 }
