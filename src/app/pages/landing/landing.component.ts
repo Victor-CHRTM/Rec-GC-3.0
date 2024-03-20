@@ -3,9 +3,9 @@ import { RECGConstant } from 'src/app/models/rec.constant.model';
 
 @Component({
   selector: 'lap-landing-component',
-  templateUrl: './landing-component.component.html',
-  styleUrls: ['./landing-component.component.scss']
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.scss']
 })
-export class LandingComponentComponent {
+export class LandingComponent {
   readonly RECGConstant = RECGConstant;
 }

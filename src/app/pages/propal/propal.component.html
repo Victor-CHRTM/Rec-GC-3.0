@@ -1,0 +1,19 @@
+<h2> {{ RECGConstant.PROPAL_COMPONENT_TITLE }} </h2>
+
+
+<div *ngFor="let propal of Propal">
+    <span> {{ RECGConstant.PROPAL_COMPONENT_API_USER_ID }} {{ propal.userId }} | </span>
+    <span> {{ RECGConstant.PROPAL_COMPONENT_API_ID }} {{ propal.id }} | </span>
+    <span> {{ RECGConstant.PROPAL_COMPONENT_API_TITLE }} {{ propal.title }} | </span>
+
+    <ng-container 
+        *ngIf="propal.completed == true; then Completed; else notCompleted">
+    </ng-container>
+    <ng-template #Completed>
+        {{ RECGConstant.PROPAL_COMPONENT_API_COMPLETED }} ✔️
+    </ng-template>
+    <ng-template #notCompleted>
+        {{ RECGConstant.PROPAL_COMPONENT_API_COMPLETED }} ❌
+    </ng-template>
+</div>
+
