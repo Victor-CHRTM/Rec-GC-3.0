@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RECGConstant } from 'src/app/models/rec.constant.model';
 
-import { PropalApiService } from 'src/app/core/api/propal-api.service';
+import { Propal } from 'src/app/models/propal.model';
+import { PropalService } from 'src/app/services/propal.service';
 
 @Component({
   selector: 'lap-propal-component',
@@ -11,16 +12,15 @@ import { PropalApiService } from 'src/app/core/api/propal-api.service';
 export class PropalComponent implements OnInit {
   readonly RECGConstant = RECGConstant;
 
-  Propal: any = [];
-  constructor(public propalApi: PropalApiService) {}
-  ngOnInit() {
-    this.loadPropals();
-  }
+  propals: Propal [] = [];
 
-  //get all propals
-  loadPropals() {
-    return this.propalApi.getPropals().subscribe((data: {}) => {
-      this.Propal = data;
-    });
+  private readonly propalService: PropalService = inject(PropalService);
+
+  ngOnInit(){
+    this.propalService.getPropals().subscribe(
+      (data : Propal[]) => {
+        this.propals = data;
+      }
+    )
   }
 }

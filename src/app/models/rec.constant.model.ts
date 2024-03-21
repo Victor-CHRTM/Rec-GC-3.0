@@ -9,5 +9,6 @@ export const RECGConstant = {
     PROPAL_COMPONENT_API_USER_ID : "UserId: ",
     PROPAL_COMPONENT_API_ID : "Id: ",
     PROPAL_COMPONENT_API_TITLE : "Title: ",
-    PROPAL_COMPONENT_API_COMPLETED : "Completed: "
+    PROPAL_COMPONENT_API_COMPLETED : "Completed: ✔️",
+    PROPAL_COMPONENT_API_NOT_COMPLETED : "Completed: ❌"
 };
